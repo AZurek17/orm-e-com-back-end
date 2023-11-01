@@ -33,12 +33,16 @@ Product.init(
       validate: {
         isInt: true,
       },
+    },
     category_id: {
       type: DataTypes.INTERGER,
-      // add reference categoty model's id
+      references: {
+        model: 'Category',
+        key: 'id',
       },
-    }
+    },
   },
+
   {
     sequelize,
     timestamps: false,
