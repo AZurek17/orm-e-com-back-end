@@ -14,13 +14,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
-  Tag.findOne(
-    {
-      where: {
-        tag_id: req.params.category_id,
-      },
-    }
-  ).then ((tagData) => {
+  Tag.findByPk(req.params.id).then((tagData) => {
     res.json(tagData);
   })
 

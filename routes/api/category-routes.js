@@ -14,16 +14,9 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
-  Category.findOne(
-    {
-      where: {
-        category_id: req.params.category_id,
-      },
-    }
-  ).then((categoryData) => {
+  Category.findByPk(req.params.id).then((categoryData) =>{
     res.json(categoryData);
-  })
-
+  });
 });
 
 router.post('/', (req, res) => {
