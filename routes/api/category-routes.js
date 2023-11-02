@@ -54,7 +54,7 @@ router.put('/:id', (req, res) => {
   .then((updateCategory) => {
     res.json(updateCategory)
   })
-  .catch((err) => res.json(err));
+  .catch((err) => res.json(err))
 });
 
 router.delete('/:id', (req, res) => {
