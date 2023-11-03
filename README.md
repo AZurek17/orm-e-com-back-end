@@ -8,11 +8,14 @@
 
  * node - https://nodejs.org/en/about
  * npm - https://www.npmjs.com/
- * inquirer - https://www.npmjs.com/package/inquirer
- * console.table - https://www.npmjs.com/package/console.table
  * mysql2 - https://www.npmjs.com/package/mysql2
+ * sequelize - https://sequelize.org/
+ * express - https://expressjs.com/
+ * dotenv - https://www.npmjs.com/package/dotenv
 
  ## Description
+
+  This application is a backend for a e-commerce website which uses the latest technologies listed above. 
 
  ## Table of Contents
   
@@ -28,9 +31,20 @@
 
 This application requires dotenv, express, , mysql2, and sequelize.  
 * To install all dependences, run: npm install
+* Create a database using the schema.sql.
+* To load the seeds, run: npm run seed 
 * To start the program, run: node server.js
 
 ## Usage
+This application allows you to add store you login information using dotenv. by creating a config folder with a connection.js and an .env file in the root folder. Below is a snippet of code:
+  
+  .env
+
+    DB_NAME='ecommerce_db'
+    DB_USER='<enter username here>'
+    DB_PW='<enter password here>'
+
+
 
 ## License
 
