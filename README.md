@@ -16,6 +16,7 @@
  ## Description
 
   This application is a backend for a e-commerce website which uses the latest technologies listed above. 
+  which allows for an API GET, POST, PUT, and DELETE request for each models: Category, Products, Tag.
 
  ## Table of Contents
   
@@ -31,19 +32,45 @@
 
 This application requires dotenv, express, , mysql2, and sequelize.  
 * To install all dependences, run: npm install
-* Create a database using the schema.sql.
-* To load the seeds, run: npm run seed 
-* To start the program, run: node server.js
+* Create the database in MYSQL using the schema.sql.
+* To load the seeds into the database, run: npm run seed 
+* To start the server, run: node server.js
 
 ## Usage
-This application allows you to add store you login information using dotenv. by creating a config folder with a connection.js and an .env file in the root folder. Below is a snippet of code:
+This application uses dotenv which allows you to store your login information in an .env file. By creating a config folder with a connection.js inside, and an .env file in the root folder of the application. Remeber to add .env into your .gitignore file so you dont upload you private information into your repository for others to see. Below is a snippet of code:
   
-  .env
+.env
 
     DB_NAME='ecommerce_db'
     DB_USER='<enter username here>'
     DB_PW='<enter password here>'
 
+connection.js  
+
+    const sequelize = process.env.JAWSDB_URL
+      ? new Sequelize(process.env.JAWSDB_URL)
+      : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
+          host: 'localhost',
+          dialect: 'mysql',
+          dialectOptions: {
+            decimalNumbers: true,
+          },
+        });
+
+After creating routes, you can create API GET, POST, PUT, and DELETE requests with using Using Insomnia Core.
+
+below is a code snippet:
+
+Get Request:
+
+    router.get('/', (req, res) => {
+     associated Products
+     Category.findAll().the((categoryData) => {
+       res.json(categoryData);
+    });
+    });
+
+Please watch the walkthrough video (see link above), testing each route request created for each model created.
 
 
 ## License
@@ -58,7 +85,7 @@ This application allows you to add store you login information using dotenv. by 
 
  ## Tests
  
- This application does not have any tests
+ This application tested the writen code using Insomnia Core application
 
  ## Contributing
 
