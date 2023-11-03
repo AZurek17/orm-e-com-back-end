@@ -21,15 +21,13 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new category
-  Category.create([
-    {
-      category_name: req.params.category_name,
-    }
-  ]).then(() => {
-    res.send('Category Added!')
+  Category.create(req.body)
+  .then((newCategory) => {
+    res.json(newCategory);
   })
-  return res.json(categoryData);
-  
+  .catch((err) => {
+    res.json(err);
+  });
 });
 
 router.put('/:id', (req, res) => {
