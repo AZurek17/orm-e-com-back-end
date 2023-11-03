@@ -1,6 +1,6 @@
 # orm-e-com-back-end ![GitHub License Badge](https://img.shields.io/badge/License-MIT-yellow)
 
-[Link to Walkthrough Video](#)
+[Link to Walkthrough Video](https://watch.screencastify.com/v/GkLn6BAAw9DhN8k4BYd0)
 
 ![orm-e-com-back-end](./images/Screenshot.png)
 
